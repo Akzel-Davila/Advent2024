@@ -29,7 +29,7 @@ def check_up(grid,row,col):
             return 0
     return 0
 
-def check_down(grid,row,col):
+def check_up(grid,row,col):
     if(row>=3):
         if grid[row-1][col] == "M" and grid[row-2][col] == "A" and grid[row-3][col]== "S":
             return 1
@@ -37,8 +37,8 @@ def check_down(grid,row,col):
             return 0
     return 0
 
-def check_up(grid,row,col):
-    if(row>=3): #Change this condition later
+def check_down(grid,row,col):
+    if(row<= len(grid)-3):
         if grid[row-1][col] == "M" and grid[row-2][col] == "A" and grid[row-3][col]== "S":
             return 1
         else:
