@@ -12,13 +12,13 @@ def day2_solution(data):
         rules = rules.split(" ")
         temp = rules.copy()
         temp.sort(reverse=True)
-        if rules == sorted(rules) or rules == temp:
+        if rules == sorted(rules, key=int) or sorted(rules,key=int) == list(reversed(rules)):
             safe = True
             for i in range(len(rules)-1):
                 difference = abs(int(rules[i])-int(rules[i+1]))
-                if (difference>3 or difference<1):
+                if difference>3 or difference == 0:
                     safe = False
-            if(safe):
+            if safe:
                 print(rules)
                 safe_reports+=1
 
