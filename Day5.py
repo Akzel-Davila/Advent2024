@@ -23,8 +23,16 @@ def part1_solution(file_data):
                     num_elements += 1
             if num_elements>1:
                 new_pairs.append(page_list[i])
-        for pairs in new_pairs:
-            print(pairs)
+        for num in num_list:
+            correct = num_list.copy()
+            order = 0
+            for pairs in new_pairs:
+                if (pairs.find(num)) > 0:
+                    order+=1
+                if(order > num_list.index(num)):
+                    print(num)
+                    correct.remove(num_list)
+    print(correct)
 
     print(new_pairs)
 
